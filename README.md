@@ -260,4 +260,10 @@ land-marketplace/
 ├── frontend/
 ├── docker-compose.yml
 └── README.md
-``
+```
+
+## AI Usage
+
+AI tools, including ChatGPT, were used throughout the development process as a supporting resource for research, technical investigation, debugging, implementation suggestions, and documentation.
+
+The use of AI was focused on accelerating development and exploring possible solutions. All final decisions regarding architecture, technologies, business rules, implementation, and code were reviewed and validated by the developer.
