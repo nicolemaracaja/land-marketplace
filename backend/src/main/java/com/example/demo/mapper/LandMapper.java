@@ -90,6 +90,7 @@ public class LandMapper {
                 land.getDescription(),
                 land.getPrice(),
                 land.getContact(),
-                toGeoJsonMap(land.getGeometry()));
+                toGeoJsonMap(land.getGeometry()),
+                land.getStatus());
     }
 }

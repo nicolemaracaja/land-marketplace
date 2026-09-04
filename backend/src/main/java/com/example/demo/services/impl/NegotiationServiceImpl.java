@@ -8,6 +8,7 @@ import com.example.demo.exceptions.ResourceNotFoundException;
 import com.example.demo.models.entities.Land;
 import com.example.demo.models.entities.Negotiation;
 import com.example.demo.models.entities.User;
+import com.example.demo.models.enums.LandStatusEnum;
 import com.example.demo.models.enums.NegotiationStatus;
 import com.example.demo.repositories.LandRepository;
 import com.example.demo.repositories.NegotiationRepository;
@@ -110,6 +111,13 @@ public class NegotiationServiceImpl implements NegotiationService {
             throw new InvalidOperationException(
                     "Only pending negotiations can be accepted");
         }
+
+        Land land = negotiation.getLand();
+
+        land.setOwner(negotiation.getBuyer());
+        land.setStatus(LandStatusEnum.SOLD);
+
+        landRepository.save(land);
 
         negotiation.setStatus(NegotiationStatus.ACCEPTED);
 

@@ -123,28 +123,27 @@ function ProfilePage() {
               <div className="h-32 bg-slate-900">
                 <div className="h-full bg-[radial-gradient(circle_at_top_right,_rgba(37,99,235,0.45),_transparent_45%)]" />
               </div>
-
               <div className="px-6 pb-6 sm:px-8">
-                <div className="-mt-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-                  <div className="flex items-end gap-4">
+                <div className="relative">
+                  <div className="-mt-10 flex items-end justify-between">
                     <div className="flex h-20 w-20 items-center justify-center rounded-2xl border-4 border-white bg-blue-100 text-2xl font-bold text-blue-700 shadow-sm">
                       {profile.name.charAt(0).toUpperCase()}
                     </div>
 
-                    <div className="pb-1">
-                      <h2 className="text-xl font-bold text-slate-900">
-                        {profile.name}
-                      </h2>
-
-                      <p className="mt-1 text-sm text-slate-500">
-                        {profile.email}
-                      </p>
-                    </div>
+                    <span className="mb-2 w-fit rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700">
+                      Active account
+                    </span>
                   </div>
 
-                  <span className="w-fit rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700">
-                    Active account
-                  </span>
+                  <div className="mt-4">
+                    <h2 className="text-xl font-bold text-slate-900">
+                      {profile.name}
+                    </h2>
+
+                    <p className="mt-1 text-sm text-slate-500">
+                      {profile.email}
+                    </p>
+                  </div>
                 </div>
               </div>
             </section>
