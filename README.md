@@ -115,12 +115,13 @@ PostGIS is used for spatial operations such as polygon intersection and geograph
 
 As an additional feature, the system implements:
 
-* User registration
-* Login
-* JWT authentication
-* Protected routes
-* Land ownership
-* Authorization for land and negotiation operations
+- User registration
+- Login
+- JWT-based authentication
+- JWT stored in HttpOnly cookies
+- Protected routes
+- Land ownership
+- Authorization for land and negotiation operations
 
 ---
 
