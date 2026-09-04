@@ -1,0 +1,35 @@
+services:
+  database:
+    image: postgis/postgis:17-3.5
+    container_name: land_marketplace_database
+    environment:
+      POSTGRES_DB: land_marketplace
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    container_name: land_marketplace_backend
+    ports:
+    - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/land_marketplace
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    depends_on:
+      - database
+
+  frontend:
+    build: ./frontend
+    container_name: land_marketplace_frontend
+    ports:
+    - "5173:5173"
+    depends_on:
+    - backend
+
+volumes:
+  postgres_data:
