@@ -4,6 +4,18 @@ A full-stack web application for buying and selling land through an interactive 
 
 The system allows users to register land properties by drawing their boundaries on a map, search for lands within a geographic area, view property information, and make offers.
 
+## Features
+
+- User registration and authentication
+- Land registration using map-drawn polygons
+- Polygon overlap validation using PostGIS
+- Geographic land search using a map-drawn circle
+- Land details visualization
+- Land ownership management
+- Offer and negotiation workflow
+- Accept, reject, and cancel negotiations
+- My Lands management and status filtering
+
 ## 1. How the System Works
 
 The application is divided into three main components:
